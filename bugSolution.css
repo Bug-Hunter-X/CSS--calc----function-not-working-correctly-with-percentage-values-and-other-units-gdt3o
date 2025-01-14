@@ -1,0 +1,22 @@
+The issue can be solved by using multiple CSS rules and avoid using percentage values directly with other units in `calc()`. For example, instead of using the following code:
+
+```css
+.element {
+  width: calc(50% - 10px);
+}
+```
+
+Use this instead:
+
+```css
+.container {
+  width: 100%;
+}
+
+.element {
+  width: 50%;
+  margin-left: 10px;
+}
+```
+
+This ensures that the percentage is calculated correctly before other units are applied.
